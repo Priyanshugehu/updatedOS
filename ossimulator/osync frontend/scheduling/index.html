@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSync Scheduling Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container glass">
+    <h1>⚙️ OSync Scheduling Simulator</h1>
+    <h3>CPU Scheduling Algorithms Visualizer</h3>
+
+    <div class="form-section">
+      <label>Choose Algorithm:</label>
+      <select id="algo">
+        <option>FCFS</option>
+        <option>SJF</option>
+        <option>Round Robin</option>
+      </select>
+
+      <label>Enter Burst Times (comma separated):</label>
+      <input type="text" id="burst" placeholder="5, 3, 8, 6" />
+
+      <div id="quantumField" style="display:none;">
+        <label>Enter Time Quantum (for RR):</label>
+        <input type="number" id="quantum" min="1" value="2" />
+      </div>
+
+      <button id="simulateBtn">Simulate</button>
+    </div>
+
+    <div id="result" class="glass-sub"></div>
+    <div id="table-container" class="glass-sub"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
