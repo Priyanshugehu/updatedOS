@@ -58,9 +58,16 @@ def predict_cpu():
     burst_to_quantum = avg_burst_time / (time_quantum + 1e-8)
     waiting_to_arrival = avg_waiting_time / (avg_arrival_time + 1e-5)
 
+    # Define features (same order used during training)
+    features = [
+        "num_processes", "avg_burst_time", "avg_arrival_time",
+        "avg_waiting_time", "cpu_utilization", "time_quantum",
+        "burst_to_quantum", "waiting_to_arrival"
+    ]
+
     # Prepare input for model
     df_input = pd.DataFrame([[num_processes, avg_burst_time, avg_arrival_time, avg_waiting_time, cpu_utilization, time_quantum, burst_to_quantum, waiting_to_arrival]],
-                            columns=["num_processes", "avg_burst_time", "avg_arrival_time", "avg_waiting_time", "cpu_utilization", "time_quantum", "burst_to_quantum", "waiting_to_arrival"])
+                            columns=features)
     scaled = scaler_cpu.transform(df_input)
     pred = model_cpu.predict(scaled)
     predicted_algo = le_cpu.inverse_transform(pred)[0]

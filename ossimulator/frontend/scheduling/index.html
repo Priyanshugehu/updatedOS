@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>⚙ OSync CPU Scheduling Predictor</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <div class="overlay"></div>
+
+
+
+  <div class="container glass">
+
+    <h1>🧠 OSync CPU Scheduling Predictor</h1>
+
+    <h3>Find the Best Scheduling Algorithm (FCFS, SJF, RR)</h3>
+
+
+
+    <div class="form-section">
+
+      <label>Number of Processes:</label>
+
+      <input type="number" id="num_processes" min="1" value="10" />
+
+
+
+      <label>Average Burst Time (ms):</label>
+
+      <input type="number" id="avg_burst_time" step="0.1" min="0.1" value="6.5" />
+
+
+
+      <label>Average Arrival Time (ms):</label>
+
+      <input type="number" id="avg_arrival_time" step="0.1" min="0" value="3.0" />
+
+
+
+      <label>Average Waiting Time (ms):</label>
+
+      <input type="number" id="avg_waiting_time" step="0.1" min="0" value="8.0" />
+
+
+
+      <label>CPU Utilization (0–1):</label>
+
+      <input type="number" id="cpu_utilization" step="0.01" min="0.5" max="1.0" value="0.82" />
+
+
+
+      <label>Time Quantum (ms):</label>
+
+      <input type="number" id="time_quantum" step="0.1" min="1" value="4.0" />
+
+
+
+      <button id="predictBtn">Predict Best Algorithm</button>
+
+    </div>
+
+
+
+    <div id="result" class="glass-sub"></div>
+
+  </div>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
