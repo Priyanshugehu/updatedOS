@@ -3,35 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OSync Simulator</title>
+  <title>🔀 OSync Page Replacement Predictor</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="overlay"></div>
 
   <div class="container glass">
-    <h1>🔀 OSync Simulator</h1>
-    <h3>Page Replacement & Scheduling Visualizer</h3>
+    <h1>🧠 OSync Page Replacement Predictor</h1>
+    <h3>Find the Best Page Replacement Algorithm (FIFO, LRU, Optimal)</h3>
 
     <div class="form-section">
-      <label>Choose Algorithm:</label>
-      <select id="algo">
-        <option>FIFO</option>
-        <option>LRU</option>
-        <option>LFU</option>
-      </select>
+      <label>Number of Pages:</label>
+      <input type="number" id="num_pages" min="5" max="50" value="20" />
 
-      <label>Page Reference String:</label>
-      <input type="text" id="pages" placeholder="7, 0, 1, 2, 0, 3, 0, 4" />
+      <label>Memory Size (Frames):</label>
+      <input type="number" id="memory_size" min="2" max="12" value="4" />
 
-      <label>Number of Frames:</label>
-      <input type="number" id="frames" min="1" value="3" />
+      <label>Locality (0.05 - 0.95):</label>
+      <input type="number" id="locality" step="0.01" min="0.05" max="0.95" value="0.6" />
 
-      <button id="simulateBtn">Simulate</button>
+      <label>Sequence Length:</label>
+      <input type="number" id="sequence_len" min="20" max="200" value="80" />
+
+      <button id="predictBtn">Predict Best Algorithm</button>
     </div>
 
     <div id="result" class="glass-sub"></div>
-    <div id="table-container" class="glass-sub"></div>
   </div>
 
   <script src="script.js"></script>

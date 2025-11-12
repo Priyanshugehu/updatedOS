@@ -17,11 +17,11 @@ le_cpu = joblib.load('label_encoder_cpu.pkl')
 
 @app.route('/')
 def index():
-    return send_from_directory('frontend', 'index.html')
+    return send_from_directory('osync frontend', 'index.html')
 
 @app.route('/<path:path>')
 def serve_static(path):
-    return send_from_directory('frontend', path)
+    return send_from_directory('osync frontend', path)
 
 @app.route('/predict', methods=['POST'])
 def predict():
