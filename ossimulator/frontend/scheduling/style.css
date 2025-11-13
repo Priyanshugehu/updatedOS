@@ -1,19 +1,20 @@
 /* ---------- Background and Overlay ---------- */
+html {
+  background-color: black;
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background-image: url("../img/what-is-an-operating-system.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  overflow: auto;
 }
 .overlay {
   position: absolute;
@@ -52,7 +53,8 @@ body {
   margin-top: 20px;
   padding: 15px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
 }
 
 /* ---------- Headings ---------- */
@@ -63,7 +65,7 @@ h1 {
 }
 
 h3 {
-  color: #cce7ff;
+  color: #333;
   font-weight: 300;
   margin-bottom: 25px;
 }
@@ -115,12 +117,12 @@ button:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  color: white;
+  color: black;
   margin-top: 15px;
 }
 
 th, td {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #000;
   padding: 8px;
 }
 
@@ -129,5 +131,29 @@ th {
 }
 
 tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Gantt Chart ---------- */
+.gantt {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
   background: rgba(255, 255, 255, 0.05);
+}
+
+.gantt-block {
+  height: 50px;
+  background: linear-gradient(90deg, #00b4db, #0083b0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 2px;
+  box-shadow: 0 0 5px rgba(0, 180, 219, 0.6);
 }

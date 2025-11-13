@@ -61,12 +61,16 @@
 
 
       <label>Time Quantum (ms):</label>
-
       <input type="number" id="time_quantum" step="0.1" min="1" value="4.0" />
 
+      <label>Arrival Times (comma-separated, e.g., 0,1,2,3):</label>
+      <input type="text" id="arrival_times" placeholder="0,1,2,3" />
 
+      <label>Burst Times (comma-separated, e.g., 5,3,8,6):</label>
+      <input type="text" id="burst_times" placeholder="5,3,8,6" />
 
       <button id="predictBtn">Predict Best Algorithm</button>
+      <button id="simulateBtn" style="display:none;">Simulate</button>
 
     </div>
 
